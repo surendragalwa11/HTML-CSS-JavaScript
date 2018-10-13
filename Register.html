@@ -1,0 +1,148 @@
+<doctype html>
+<html>
+<head >
+<title>Register</title>
+<link rel="stylesheet" href="Register.css" >
+
+<script type="text/javascript">
+
+
+function Validation()
+{
+  //gmail validation
+  var a=document.forms[0].elements[2].value.length;
+  var b=document.forms[0].elements[2].value;
+  var c=b.substring(a-10,a);
+  
+  var d=document.forms[0].elements[0].value.length;
+   var e=document.forms[0].elements[1].value.length;
+  
+  var f=document.forms[0].elements[3].value.length;
+   var g=document.forms[0].elements[4].value.length;
+   
+   var h=document.forms[0].elements[4].value;
+    var i=document.forms[0].elements[5].value;
+    var j=document.forms[0].elements[5].value.length;
+	
+	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+  
+  var check=true;
+   
+   if(c!="@gmail.com")
+   {
+   alert("mail should be @gmail.com");
+   check=false;
+   }
+   
+
+   //first name last name validation
+   
+   if(d==0 || e==0)
+   {
+   	alert("first and last name can't be empty");
+	check=false;
+   }
+
+   //username validation
+   
+      if(f==0 || g==0)
+    {
+   	  alert("username and password can't be empty");
+	  check=false;
+    }
+	else
+	{
+	  document.forms[0].elements[0].style.display="block";
+	}
+
+    //password validation
+    
+    if(h!=i || j<6 || !(h.match(passw)))
+    {
+       alert("Password must be 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter");
+	   check=false;
+    }
+    
+    if(check==true)
+    {	
+	    alert("Registration successful.Please login now.");
+		//window.location="login.html";
+
+		//window.open("file:///C:/Users/surendra.galwa/Documents/LogIn.html");
+    }	
+    
+
+}
+   var count=0;
+   function Check()
+   {
+        
+	  var uname=document.forms[1].elements[0].value;
+	  var pas=document.forms[1].elements[1].value;
+	  
+	    if(uname!="surendra" || pas!="sS@12345")   //max 3 wrong attempts allowed
+		{
+		   alert("inavlid username or password");
+		   document.forms[1].elements[0].value="";
+		   document.forms[1].elements[1].value="";
+		   count++;
+		    if(count==3)
+			{
+			  alert("You have crossed max login attempts! Your account has been blocked, please contact the administrator.");
+			  //window.location="Blocked.html";
+			  //code to disable textbox and form
+			  document.forms[1].elements[0].disabled=true;
+			  document.forms[1].elements[1].disabled=true;
+			  //btn.diabled=true;
+			  document.getElementById("btn").disabled=true;  //disables login button
+			   document.getElementById("btnn").disabled=false; //enables help button
+			}
+		}
+		else
+		{
+		  alert("Login successful");
+		  window.location="Major1.html";
+		}
+   }
+   function New()
+   {
+     window.location="Blocked.html";
+   }
+   
+</script>
+</head>
+
+<div style="background-color:#FAFAD2;height:646px;">  
+
+<body >
+
+<div class="aa">
+<form name="register">
+<h1>Please register yourself..</h1>
+First name:*&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp<input type="text" name="fname"><br><br>
+Last name:* &nbsp &nbsp &nbsp&nbsp &nbsp <input type="text" name="lname"><br><br>
+E-mail:* &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text" name="mail"><br><br>
+Username: &nbsp&nbsp &nbsp &nbsp&nbsp&nbsp &nbsp   <input type="text" name="uname"><br><br>
+Password: &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp <input type="password" name="pas"><br><br>
+Confirm pas:&nbsp&nbsp &nbsp &nbsp&nbsp <input type="password" name="pas1"><br><br><br>
+</form>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button onclick="Validation()">Register</Button>
+</div>
+
+<div class="bb">
+<h1>Please Log In here..</h1>
+
+
+<form name="login">
+Username: &nbsp   <input type="text" name="uname"><br><br>
+Password:  &nbsp  <input type="password" name="pas"><br><br>
+
+    
+</form>
+ <button onclick="Check()" id="btn">Log In</button>
+ <button onclick="New()" id="btnn" disabled="true">Help</button>
+</div>
+
+</div>
+</body>
+</html>

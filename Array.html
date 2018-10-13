@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<title>Array</title>
+</head>
+
+<body>
+<script>
+ 
+ count=0;
+    function Fruits()
+	{
+	  var fruits=new Array(5);
+	  //var a=document.getElementById("fr").value;
+	  var a=document.forms[0].elements[0].value;
+	  fruits.push(a);
+	 //document.write(fruits);
+	  count++;
+	  if(count==fruits.length)
+	  {
+	  alert("Array has been reched to it's highest index,now you can't add more values");
+	  document.getElementById("one").disabled=true;
+	 // document.write(fruits);
+	  }
+	}
+</script>
+<form>
+<input type="text" id="fr" >
+</form>
+	 <button onclick="Fruits()" id="one">Add to array</button>
+</body>
+</html>

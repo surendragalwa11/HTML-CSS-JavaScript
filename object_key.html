@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h1>Demo: JavaScript Object</h1>
+	<p id="p0"></p>
+	<p id="p1"></p>
+	<p id="p2"></p>
+	<p id="p3"></p>
+	
+	<script>
+		var person = new Object();
+    
+		person.firstName = "James";
+		person.lastName = "Bond";
+		person.age = 25;
+		
+		
+        var i = 0;
+		for(var key in person)
+		{
+		 document.getElementById("p" + i++).innerHTML = key;
+			
+	    }
+		
+		console.log(person);
+
+        document.write(Object.keys(person)+"<br><br>"+Object.values(person)+"<br><br>"+Object.entries(person));
+				
+				
+
+    </script>
+</body>
+</html>

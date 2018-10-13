@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8"/>
+	<script>
+	    //Create an array and it's print methods
+	    var fruits=["Apple","Banana","Grapes"];
+		for(var i=0;i<fruits.length;i++)
+		{
+		    document.write(fruits[i]+"<br>");
+		}
+		document.write("<br>");
+		for(var i in fruits)
+		{
+		    document.write(fruits[i]+"<br>");
+		}
+		
+		
+		//Add element
+		/*fruits.push("Orange");
+		fruits.unshift("Papaya");
+		
+		for(var i in fruits)
+		{
+		    document.write(fruits[i]+"<br>");
+		}
+		*/
+		//Delete Element
+		/*var remove1=fruits.pop();
+		var remove2=fruits.shift();
+		
+		document.write("<br>Poped Element-"+remove1+"<br>");
+		document.write("Remove Element from begin-"+remove2+"<br>");
+		*/
+		
+		//Adding or Delete element from any position
+		/*var del=fruits.splice(2,1);
+		fruits.splice(1,0,"Mango");
+		
+		document.write("<br>Deleting Element from location 2 is "+del+"<br><br>");
+		for(var i in fruits)
+		{
+		    document.write(fruits[i]+"<br>");
+		}
+		*/
+		//Creating a string from an array
+		/*document.write("<br>Using join method-> "+fruits.join(","));
+		document.write("<br>Using toSting method-> "+fruits.toString());
+		*/
+		//Exrtacting a portion of an array
+		//document.write("<br><br>"+fruits.slice(1,4)+"<br><br>");
+		
+		//Merging two or more arrays
+		/*var fruits2=["Watermellon","Pineapple"];
+		fruits=fruits.concat(fruits2);
+		
+		for(var i in fruits)
+		{
+		    document.write(fruits[i]+"<br>");
+		}*/
+		
+		//Searching Through an Array
+		//document.write("<br>Mango is present at index "+fruits.indexOf("Mango")+"<br><br>");
+		
+		//document.write(fruits.sort()+"<br>");
+		//document.write(fruits.reverse());
+    </script>
+ </head>
+ <body>
+    
+ </body>
+</html>
